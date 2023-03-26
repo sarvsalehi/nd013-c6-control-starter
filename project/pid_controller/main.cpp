@@ -299,10 +299,6 @@ int main ()
           // Update the delta time with the previous command
           pid_steer.UpdateDeltaTime(new_delta_time);
 
-          // Compute steer error
-          double error_steer;
-          double steer_output;
-
           /**
           * TODO (step 3): compute the steer error (error_steer) from the position and the desired trajectory
           **/
