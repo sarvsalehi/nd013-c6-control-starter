@@ -17,18 +17,26 @@ public:
     /*
     * Errors
     */
-
+    double mPErr;
+    double mIErr;
+    double mDErr;
+  
     /*
     * Coefficients
     */
+    double mKp;
+    double mKi;
+    double mKd;
 
     /*
     * Output limits
-    */
-  
+    */  
+    double mMaxOutput;
+    double mMinOutput;
     /*
     * Delta time
     */
+    double mDt;
 
     /*
     * Constructor
