@@ -378,15 +378,15 @@ int main ()
                brake_output = -throttle;
              }
 
-//           // Save data
-//           file_throttle.seekg(std::ios::beg);
-//           for(int j=0; j < i - 1; ++j){
-//               file_throttle.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
-//           }
-//           file_throttle  << i ;
-//           file_throttle  << " " << error_throttle;
-//           file_throttle  << " " << brake_output;
-//           file_throttle  << " " << throttle_output << endl;
+            // Save data
+             file_throttle.seekg(std::ios::beg);
+             for(int j=0; j < i - 1; ++j){
+                 file_throttle.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
+             }
+             file_throttle  << i ;
+             file_throttle  << " " << error_throttle;
+             file_throttle  << " " << brake_output;
+             file_throttle  << " " << throttle_output << endl;
 
 
           // Send control
