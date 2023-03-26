@@ -2,7 +2,25 @@
 
 # Proportional-Integral-Derivative (PID)
 
-In this project, you will apply the skills you have acquired in this course to design a PID controller to perform vehicle trajectory tracking. Given a trajectory as an array of locations, and a simulation environment, you will design and code a PID controller and test its efficiency on the CARLA simulator used in the industry.
+A PID controller is designed in this project and tested using Carla simulator in an urban driving scenarios
+
+After couple of round of tunning coefficients of control parameters the steering and throttle control resulted the following and no collision:
+![ctrlview](https://user-images.githubusercontent.com/125278855/227785245-7ff4b65d-ee8f-4f3f-9d11-980a02f8de4a.png)
+![ctrlview2](https://user-images.githubusercontent.com/125278855/227785250-d2be44c9-6e21-424e-9819-96214a84be13.png)
+
+This result of comparing the steering output and error shows that using steering error for refining the control which influences the steering as expected.
+this converges to a constant value as the velocity goes towards zero.
+![errorConvergence](https://user-images.githubusercontent.com/125278855/227785313-e973ce57-b75d-41da-8061-35b31c24906f.png)
+
+Throttle is reducing very slowly which can be further optimized tunning the control parameters considering keeping the velocity change in a reasonable range
+
+![throttleError](https://user-images.githubusercontent.com/125278855/227785318-58c89633-57c6-4b74-87a6-6873448b61d5.png)
+
+How would you design a way to automatically tune the PID parameters?
+Twiddle algorithm can be used as suggested in the lecture
+
+PID controller is a model free controller, i.e. it does not use a model of the car. Could you explain the pros and cons of this type of controller?
+This approach simple and can be generalized for different applications however using a model based approach could reduce the tunning effort if the proper model would be designed and customized for a specific application. 
 
 ### Installation
 
