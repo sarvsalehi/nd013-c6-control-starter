@@ -31,8 +31,11 @@ void PID::UpdateError(double cte) {
    /**
    * Update PID errors based on cte.
    **/
-   mIErr =  mIErr + cte * mDt; 
+   if(mDt)
+   {
+   mIErr += (cte * mDt); 
    mDErr = (cte - mPErr) / mDt;
+   }
    mPErr = cte;
 }
 
@@ -42,7 +45,7 @@ double PID::TotalError() {
     * The code should return a value in the interval [output_lim_mini, output_lim_maxi]
    */
     double control = mKp * mPErr + mKd * mDErr + mKi * mIErr;
-    return std::min(std::max(control, mMinOutput), mMaxOutput);
+    return std::max(std::min(control, mMaxOutput), mMinOutput);
 }
 
 double PID::UpdateDeltaTime(double new_delta_time) {
